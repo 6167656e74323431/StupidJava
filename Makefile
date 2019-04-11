@@ -2,7 +2,7 @@ JFLAGS = -Xlint:unchecked
 JC = javac
 JVM = java
 
-SOURCES = $(wildcard src/o6167656e74323431/stupidjava/*.java)
+SOURCES = $(wildcard src/o6167656e74323431/stupidjava/core/*.java)
 CLASSES = $(SOURCES:.java=.class)
 
 all: $(CLASSES)
