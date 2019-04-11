@@ -2,6 +2,7 @@ package o6167656e74323431.stupidjava;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.lang.reflect.Array;
 
 /**
  * This class provides a probabilistic a O(n*log(n)) method for shuffling arrays
@@ -9,7 +10,7 @@ import java.util.Arrays;
  *
  * @author     6167656e74323431
  *
- * @version    1.0
+ * @version    1.1
  */
 public final class MergeShuffle
 {
@@ -33,15 +34,16 @@ public final class MergeShuffle
 	 *
 	 * @throws     NullPointerException  If target is equal to null.
 	 */
-	public static Object[] shuffleArray(Object[] target)
+	@SuppressWarnings("unchecked")
+	public static <T> T[] shuffleArray(T[] target)
 	{
 		if (target.length == 1)
 			return target;
-		Object[] lowerTarget = Arrays.copyOfRange(target, 0, target.length / 2);
-		Object[] upperTarget = Arrays.copyOfRange(target, target.length / 2, target.length);
+		T[] lowerTarget = Arrays.copyOfRange(target, 0, target.length / 2);
+		T[] upperTarget = Arrays.copyOfRange(target, target.length / 2, target.length);
 		lowerTarget = shuffleArray(lowerTarget);
 		upperTarget = shuffleArray(upperTarget);
-		Object[] endArray = new Object[target.length];
+		T[] endArray = (T[])Array.newInstance(target[0].getClass(), target.length);
 		int endArrayPointer = 0, lowerTargetPointer = 0, upperTargetPointer = 0;
 		while (endArrayPointer < endArray.length)
 			if (lowerTargetPointer == lowerTarget.length)

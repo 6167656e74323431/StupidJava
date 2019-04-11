@@ -7,7 +7,7 @@ import java.security.SecureRandom;
  *
  * @author     6167656e74323431
  *
- * @version    1.2
+ * @version    1.3
  */
 public final class BogoSearch
 {
@@ -37,7 +37,7 @@ public final class BogoSearch
 	 *                                   equal to null
 	 */
 	@SuppressWarnings("unchecked")
-	public static boolean searchArray(Comparable[] haystack, Comparable<?> needle)
+	public static <T extends Comparable> boolean searchArray(T[] haystack, T needle)
 	{
 		if (haystack[(new SecureRandom()).nextInt(haystack.length)].compareTo(needle) == 0)
 			return true;
