@@ -7,7 +7,7 @@ import java.security.SecureRandom;
  *
  * @author     6167656e74323431
  *
- * @version    1.1
+ * @version    1.2
  */
 public final class BogoSearch
 {
@@ -47,7 +47,7 @@ public final class BogoSearch
 		}
 		catch (StackOverflowError e)
 		{
+			return false;
 		}
-		return false;
 	}
 }
