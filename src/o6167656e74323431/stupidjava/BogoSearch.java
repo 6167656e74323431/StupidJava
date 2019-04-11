@@ -1,4 +1,4 @@
-package o6167656e74323431.stupidjava.core;
+package o6167656e74323431.stupidjava;
 
 import java.security.SecureRandom;
 
